@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Candle Blow</title>
+    <title>🎂 Happy Birthday Seong-Min! 🎂</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -12,17 +12,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   </head>
   <body>
+    <!-- Added personalized header for Seong-Min -->
+    <div class="birthday-header">
+      <h1>🎉 Happy Birthday Seong-Min! 🎉</h1>
+      <p>Make a wish and celebrate your special day!</p>
+    </div>
+
     <div class="instructions">
-      Click on the cake to add candles, then share the link!
+      Click on the cake to add candles for Seong-Min, then share the link!
+    </div>
+    
+    <!-- Added age input for Seong-Min -->
+    <div class="age-controls">
+      <label for="ageInput">Seong-Min's age: </label>
+      <input type="number" id="ageInput" min="1" max="100" placeholder="Enter age">
+      <button onclick="setAgeCandles()">🎂 Set Age Candles</button>
     </div>
     
     <div class="controls">
       <button class="share-link" onclick="copyShareLink()">📋 Copy Shareable Link</button>
       <button class="share-link" onclick="clearCandles()">🗑️ Clear All Candles</button>
+      <!-- Added new buttons for Seong-Min -->
+      <button class="share-link" onclick="blowOutCandles()">💨 Blow Out All</button>
+      <button class="share-link" onclick="addRandomCandle()">🕯️ Add Random Candle</button>
     </div>
 
     <div class="candle-count-display">
-      Candles on the Cake: <span id="candleCount">0</span>
+      Candles on Seong-Min's Cake: <span id="candleCount">0</span>
+    </div>
+    
+    <!-- Added birthday message section -->
+    <div class="birthday-message">
+      <h3>Birthday Message for Seong-Min 💝</h3>
+      <input type="text" id="birthdayMessage" placeholder="Write a birthday message for Seong-Min..." maxlength="100">
+      <button onclick="addBirthdayMessage()">Add Message</button>
+      <div id="messageDisplay"></div>
     </div>
     
     <div class="cake">
@@ -36,6 +60,98 @@
       <div class="drip drip3"></div>
     </div>
 
+    <!-- Added celebration section -->
+    <div id="celebrationMessage" class="celebration" style="display: none;">
+      <h2>🎊 Happy Birthday Seong-Min! 🎊</h2>
+      <p>May all your wishes come true!</p>
+    </div>
+
     <script src="script.js"></script>
+    
+    <!-- Added custom JavaScript functions for Seong-Min -->
+    <script>
+      // Function to set candles based on age
+      function setAgeCandles() {
+        const age = document.getElementById('ageInput').value;
+        if (age && age > 0) {
+          clearCandles();
+          for (let i = 0; i < age; i++) {
+            setTimeout(() => addRandomCandle(), i * 200);
+          }
+        }
+      }
+      
+      // Function to add random positioned candle
+      function addRandomCandle() {
+        const cake = document.querySelector('.cake');
+        const event = {
+          clientX: cake.offsetLeft + Math.random() * cake.offsetWidth,
+          clientY: cake.offsetTop + Math.random() * 100 + 50
+        };
+        // This would call your existing addCandle function
+        if (typeof addCandle === 'function') {
+          addCandle(event);
+        }
+      }
+      
+      // Function to blow out all candles with animation
+      function blowOutCandles() {
+        const candles = document.querySelectorAll('.candle');
+        candles.forEach((candle, index) => {
+          setTimeout(() => {
+            candle.style.animation = 'fadeOut 0.5s ease-out forwards';
+            setTimeout(() => candle.remove(), 500);
+          }, index * 100);
+        });
+        
+        setTimeout(() => {
+          document.getElementById('celebrationMessage').style.display = 'block';
+          // Reset candle count
+          document.getElementById('candleCount').textContent = '0';
+        }, candles.length * 100 + 500);
+      }
+      
+      // Function to add birthday message
+      function addBirthdayMessage() {
+        const message = document.getElementById('birthdayMessage').value;
+        if (message.trim()) {
+          document.getElementById('messageDisplay').innerHTML = 
+            `<p><strong>Birthday Wish:</strong> "${message}" - For Seong-Min 💙</p>`;
+        }
+      }
+      
+      // Enhanced share function that includes Seong-Min's name and message
+      function copyShareLink() {
+        const message = document.getElementById('birthdayMessage').value;
+        const candleCount = document.getElementById('candleCount').textContent;
+        const baseUrl = window.location.href.split('?')[0];
+        const shareUrl = `${baseUrl}?friend=Seong-Min&candles=${candleCount}&message=${encodeURIComponent(message)}`;
+        
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          alert('🎉 Birthday cake link copied! Share Seong-Min\'s special day with friends!');
+        }).catch(() => {
+          // Fallback for older browsers
+          prompt('Copy this link to share Seong-Min\'s birthday cake:', shareUrl);
+        });
+      }
+      
+      // Load shared parameters on page load
+      window.addEventListener('load', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const friend = urlParams.get('friend');
+        const sharedCandles = urlParams.get('candles');
+        const sharedMessage = urlParams.get('message');
+        
+        if (friend === 'Seong-Min' && sharedCandles) {
+          document.getElementById('ageInput').value = sharedCandles;
+          setAgeCandles();
+        }
+        
+        if (sharedMessage) {
+          document.getElementById('birthdayMessage').value = decodeURIComponent(sharedMessage);
+          addBirthdayMessage();
+        }
+      });
+    </script>
   </body>
 </html>
