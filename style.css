@@ -215,3 +215,311 @@ body {
   margin: 20px;
   font-family: Arial, sans-serif;
 }
+/* Additional CSS for Seong-Min's personalized features */
+
+/* Birthday header styling */
+.birthday-header {
+  text-align: center;
+  margin: 30px 20px;
+  color: #f0e4d0;
+  font-family: Arial, sans-serif;
+}
+
+.birthday-header h1 {
+  font-size: 2.5em;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.birthday-header p {
+  font-size: 1.2em;
+  margin: 0;
+  opacity: 0.9;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(240, 228, 208, 0.3);
+  }
+  to {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(240, 228, 208, 0.5);
+  }
+}
+
+/* Age controls styling */
+.age-controls {
+  text-align: center;
+  margin: 20px;
+  background-color: #f0e4d0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #553c13;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.age-controls label {
+  color: #553c13;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.age-controls input {
+  padding: 8px 12px;
+  border: 2px solid #553c13;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #553c13;
+  font-size: 16px;
+  width: 80px;
+  margin-right: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.age-controls input:focus {
+  outline: none;
+  background-color: #fef9f0;
+  box-shadow: 0 0 5px rgba(85, 60, 19, 0.3);
+}
+
+.age-controls button {
+  background-color: #f0e4d0;
+  border: 2px solid #553c13;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: #553c13;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.age-controls button:hover {
+  background-color: #e6d7bb;
+}
+
+/* Birthday message section */
+.birthday-message {
+  text-align: center;
+  margin: 30px 20px;
+  background-color: #f0e4d0;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #553c13;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.birthday-message h3 {
+  color: #553c13;
+  margin: 0 0 15px 0;
+  font-family: Arial, sans-serif;
+  font-size: 1.3em;
+}
+
+.birthday-message input {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 15px;
+  border: 2px solid #553c13;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #553c13;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.birthday-message input:focus {
+  outline: none;
+  background-color: #fef9f0;
+  box-shadow: 0 0 5px rgba(85, 60, 19, 0.3);
+}
+
+.birthday-message input::placeholder {
+  color: #8b7355;
+  opacity: 0.8;
+}
+
+.birthday-message button {
+  background-color: #ad030f;
+  border: 2px solid #7b020b;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #f0e4d0;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.birthday-message button:hover {
+  background-color: #7b020b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(123, 2, 11, 0.3);
+}
+
+#messageDisplay {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 1px solid #d4c4a8;
+  min-height: 20px;
+}
+
+#messageDisplay p {
+  margin: 0;
+  color: #553c13;
+  font-style: italic;
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+}
+
+#messageDisplay strong {
+  color: #ad030f;
+}
+
+/* Celebration message */
+.celebration {
+  text-align: center;
+  margin: 30px 20px;
+  background: linear-gradient(135deg, #ad030f, #7b020b);
+  color: #f0e4d0;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 3px solid #553c13;
+  animation: celebrationPulse 2s ease-in-out infinite;
+}
+
+.celebration h2 {
+  margin: 0 0 10px 0;
+  font-size: 2.2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+}
+
+.celebration p {
+  margin: 0;
+  font-size: 1.1em;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes celebrationPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Fade out animation for blown candles */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8) rotate(10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(20deg);
+  }
+}
+
+/* Enhanced candle styles for random positioning */
+.candle.random {
+  animation: candleAppear 0.5s ease-out;
+}
+
+@keyframes candleAppear {
+  from {
+    opacity: 0;
+    transform: scale(0) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .birthday-header h1 {
+    font-size: 2em;
+  }
+  
+  .birthday-message {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+  
+  .birthday-message input {
+    max-width: 100%;
+  }
+  
+  .age-controls {
+    margin: 15px 10px;
+    padding: 12px;
+  }
+  
+  .controls {
+    margin: 15px 10px;
+  }
+  
+  .share-link {
+    margin: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Improved hover effects for better interactivity */
+.cake:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Enhanced flame animation for birthday ambiance */
+.flame.birthday {
+  animation: birthdayFlicker 1.2s ease-in-out alternate infinite;
+}
+
+@keyframes birthdayFlicker {
+  0% {
+    transform: skewX(3deg) scale(1);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4);
+  }
+  25% {
+    transform: skewX(-3deg) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6), 0 0 25px rgba(255, 165, 0, 0.6);
+  }
+  50% {
+    transform: skewX(5deg) scale(0.95);
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.3), 0 0 18px rgba(255, 165, 0, 0.3);
+  }
+  75% {
+    transform: skewX(-5deg) scale(1.05);
+    box-shadow: 0 0 12px rgba(255, 165, 0, 0.5), 0 0 22px rgba(255, 165, 0, 0.5);
+  }
+  100% {
+    transform: skewX(3deg) scale(1);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4);
+  }
+}
